@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties(prefix = "kafka")
-public class KafkaProperties {
+class KafkaProperties {
 
   @Value("${kafka.bootstrap.servers:#{'localhost:9092'}}")
   private String bootstrapServers;
