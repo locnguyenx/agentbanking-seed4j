@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: AgentBanking
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              filters[0]:
+                args[regexp]: '''/services/'' + serviceId.toLowerCase() + ''/(?<remaining>.*)'''
+                args[replacement]: '''/${remaining}'''
+                name: RewritePath
+              lower-case-service-id: true
+              predicates[0]:
+                args[pattern]: '''/services/''+serviceId.toLowerCase()+''/**'''
+                name: Path

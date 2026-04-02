@@ -1,0 +1,15 @@
+{
+  "module" : "flyway",
+  "date" : "2026-04-02T08:39:09.417370600Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8080,
+    "version" : false,
+    "baseName" : "AgentBanking"
+  }
+}

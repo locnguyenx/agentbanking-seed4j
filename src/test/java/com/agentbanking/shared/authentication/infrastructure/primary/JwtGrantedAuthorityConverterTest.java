@@ -1,0 +1,41 @@
+package com.agentbanking.shared.authentication.infrastructure.primary;
+
+import static org.assertj.core.api.Assertions.*;
+
+import com.agentbanking.UnitTest;
+import com.agentbanking.shared.authentication.domain.Role;
+import java.util.Collection;
+import java.util.List;
+import org.junit.jupiter.api.Test;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.oauth2.jose.jws.JwsAlgorithms;
+import org.springframework.security.oauth2.jwt.Jwt;
+
+@UnitTest
+class JwtGrantedAuthorityConverterTest {
+
+  private final JwtGrantedAuthorityConverter jwtGrantedAuthorityConverter = new JwtGrantedAuthorityConverter();
+
+  @Test
+  void shouldConvert() {
+    Jwt jwt = Jwt.withTokenValue("token")
+      .header("alg", JwsAlgorithms.RS256)
+      .subject("seed4j")
+      .claim("roles", List.of("ROLE_ADMIN"))
+      .build();
+
+    Collection<GrantedAuthority> result = jwtGrantedAuthorityConverter.convert(jwt);
+
+    assertThat(result).isNotEmpty().contains(new SimpleGrantedAuthority(Role.ADMIN.key()));
+  }
+
+  @Test
+  void shouldConvertButEmpty() {
+    Jwt jwt = Jwt.withTokenValue("token").header("alg", JwsAlgorithms.RS256).subject("seed4j").build();
+
+    Collection<GrantedAuthority> result = jwtGrantedAuthorityConverter.convert(jwt);
+
+    assertThat(result).isEmpty();
+  }
+}

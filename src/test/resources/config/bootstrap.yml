@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: AgentBanking
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: false

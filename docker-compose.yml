@@ -1,0 +1,5 @@
+include:
+  - src/main/docker/postgresql.yml
+  - src/main/docker/kafka.yml
+  - src/main/docker/keycloak.yml
+  - src/main/docker/axon-server.yml

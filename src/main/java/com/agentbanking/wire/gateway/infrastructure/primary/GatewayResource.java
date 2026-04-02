@@ -1,0 +1,45 @@
+package com.agentbanking.wire.gateway.infrastructure.primary;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+/**
+ * REST controller for managing Gateway configuration.
+ */
+@RestController
+@RequestMapping("/api/gateway")
+class GatewayResource {
+
+  private final RouteLocator routeLocator;
+  private final DiscoveryClient discoveryClient;
+
+  @Value("${spring.application.name}")
+  private String appName;
+
+  public GatewayResource(RouteLocator routeLocator, DiscoveryClient discoveryClient) {
+    this.routeLocator = routeLocator;
+    this.discoveryClient = discoveryClient;
+  }
+
+  /**
+   * {@code GET  /routes} : get the active routes.
+   *
+   * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the list of routes.
+   */
+  @GetMapping("/routes")
+  public ResponseEntity<Mono<List<RestRoute>>> activeRoutes() {
+    Mono<List<RestRoute>> routes = routeLocator.getRoutes()
+      .map(RestRoute::from)
+      .filter(route -> !route.serviceId().equalsIgnoreCase(appName))
+      .map(route -> route.withInstances(discoveryClient.getInstances(route.serviceId())))
+      .collectList();
+    return ResponseEntity.ok(routes);
+  }
+}

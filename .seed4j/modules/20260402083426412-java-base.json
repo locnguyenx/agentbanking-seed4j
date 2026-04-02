@@ -1,0 +1,14 @@
+{
+  "module" : "java-base",
+  "date" : "2026-04-02T08:34:26.412576800Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBanking"
+  }
+}
