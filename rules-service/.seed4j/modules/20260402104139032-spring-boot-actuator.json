@@ -1,0 +1,15 @@
+{
+  "module" : "spring-boot-actuator",
+  "date" : "2026-04-02T10:41:39.032686700Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.rules",
+    "projectName" : "Agent Banking Rules",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8081,
+    "version" : false,
+    "baseName" : "AgentBankingRules"
+  }
+}

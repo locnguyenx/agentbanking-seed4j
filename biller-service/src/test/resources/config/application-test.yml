@@ -1,0 +1,16 @@
+logging:
+  config: classpath:logback.xml
+spring:
+  main:
+    banner-mode: 'off'
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    hikari:
+      maximum-pool-size: 2
+    password: ''
+    url: jdbc:tc:postgresql:18.1:///AgentBankingBiller?TC_TMPFS=/testtmpfs:rw
+    username: AgentBankingBiller
+server:
+  port: 0
+kafka:
+  bootstrap-servers: localhost:9092

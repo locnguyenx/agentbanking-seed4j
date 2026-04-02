@@ -1,0 +1,15 @@
+{
+  "module" : "datasource-postgresql",
+  "date" : "2026-04-02T10:47:53.008060600Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.ledger",
+    "projectName" : "Agent Banking Ledger",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8082,
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}

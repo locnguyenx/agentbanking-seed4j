@@ -1,0 +1,15 @@
+{
+  "module" : "logs-spy",
+  "date" : "2026-04-02T10:42:45.445883400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.rules",
+    "projectName" : "Agent Banking Rules",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8081,
+    "version" : false,
+    "baseName" : "AgentBankingRules"
+  }
+}

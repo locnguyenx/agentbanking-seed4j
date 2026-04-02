@@ -1,0 +1,14 @@
+{
+  "module" : "java-enums",
+  "date" : "2026-04-02T11:00:34.016109300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.switchadapter",
+    "projectName" : "Agent Banking Switch Adapter",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingSwitchAdapter"
+  }
+}

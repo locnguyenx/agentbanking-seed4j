@@ -1,0 +1,15 @@
+{
+  "module" : "application-service-hexagonal-architecture-documentation",
+  "date" : "2026-04-02T10:41:44.457058400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.rules",
+    "projectName" : "Agent Banking Rules",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8081,
+    "version" : false,
+    "baseName" : "AgentBankingRules"
+  }
+}

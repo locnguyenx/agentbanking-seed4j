@@ -1,0 +1,12 @@
+logging:
+  level:
+    com:
+      agentbanking:
+        biller: DEBUG
+management:
+  endpoints:
+    access:
+      default: unrestricted
+    web:
+      exposure:
+        include: '*'

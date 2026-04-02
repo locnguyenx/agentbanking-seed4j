@@ -1,0 +1,14 @@
+{
+  "module" : "gradle-wrapper",
+  "date" : "2026-04-02T11:05:56.261988600Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.biller",
+    "projectName" : "Agent Banking Biller",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingBiller"
+  }
+}

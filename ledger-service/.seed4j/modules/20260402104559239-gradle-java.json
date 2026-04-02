@@ -1,0 +1,14 @@
+{
+  "module" : "gradle-java",
+  "date" : "2026-04-02T10:45:59.239053400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.ledger",
+    "projectName" : "Agent Banking Ledger",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}

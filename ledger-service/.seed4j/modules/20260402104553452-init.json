@@ -1,0 +1,13 @@
+{
+  "module" : "init",
+  "date" : "2026-04-02T10:45:53.452627400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "projectName" : "Agent Banking Ledger",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}

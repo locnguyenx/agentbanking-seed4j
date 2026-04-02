@@ -1,0 +1,15 @@
+{
+  "module" : "jpa-postgresql",
+  "date" : "2026-04-02T11:07:05.739289500Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.biller",
+    "projectName" : "Agent Banking Biller",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8085,
+    "version" : false,
+    "baseName" : "AgentBankingBiller"
+  }
+}

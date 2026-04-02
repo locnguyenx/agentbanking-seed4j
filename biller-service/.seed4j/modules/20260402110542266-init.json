@@ -1,0 +1,13 @@
+{
+  "module" : "init",
+  "date" : "2026-04-02T11:05:42.266259200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "projectName" : "Agent Banking Biller",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingBiller"
+  }
+}

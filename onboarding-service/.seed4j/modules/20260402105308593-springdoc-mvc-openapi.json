@@ -1,0 +1,15 @@
+{
+  "module" : "springdoc-mvc-openapi",
+  "date" : "2026-04-02T10:53:08.593091100Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.onboarding",
+    "projectName" : "Agent Banking Onboarding",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8083,
+    "version" : false,
+    "baseName" : "AgentBankingOnboarding"
+  }
+}

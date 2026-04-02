@@ -1,0 +1,14 @@
+{
+  "module" : "prettier",
+  "date" : "2026-04-02T10:46:16.535502400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "commit" : false,
+    "packageName" : "com.agentbanking.ledger",
+    "projectName" : "Agent Banking Ledger",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}
