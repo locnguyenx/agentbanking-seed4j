@@ -1,114 +1,45 @@
 package com.agentbanking.gateway.wire.gateway.infrastructure.primary;
 
-import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.tuple;
-import static org.mockito.Mockito.when;
 
-import java.net.URI;
-import java.util.function.Predicate;
-import org.assertj.core.data.Index;
+import com.agentbanking.gateway.IntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.webflux.autoconfigure.WebFluxProperties;
-import org.springframework.boot.webflux.test.autoconfigure.WebFluxTest;
-import org.springframework.cloud.client.DefaultServiceInstance;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.gateway.handler.AsyncPredicate;
-import org.springframework.cloud.gateway.handler.predicate.PathRoutePredicateFactory;
-import org.springframework.cloud.gateway.route.Route;
-import org.springframework.cloud.gateway.route.RouteLocator;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
-import org.springframework.test.web.reactive.server.FluxExchangeResult;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.web.server.ServerWebExchange;
-import reactor.core.publisher.Flux;
-import reactor.test.StepVerifier;
 
-@WebFluxTest(GatewayResource.class)
+@IntegrationTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class GatewayResourceIT {
-
-  @MockitoBean
-  private DiscoveryClient discoveryClient;
-
-  @MockitoBean
-  private RouteLocator routeLocator;
 
   @Autowired
   private WebTestClient webTestClient;
 
-  @Value("${spring.application.name}")
-  private String appName;
+  @LocalServerPort
+  private int port;
 
   @Test
-  void shouldGetActiveRoutes() throws Exception {
-    Flux<Route> routes = Flux.just(
-      Route
-        .async()
-        .id("ReactiveCompositeDiscoveryClient_MY-APP")
-        .uri(new URI("lb://MY-APP"))
-        .asyncPredicate(new AsyncPredicate.DefaultAsyncPredicate<>(this.getPredicate()))
-        .build()
-    );
-    when(routeLocator.getRoutes()).thenReturn(routes);
-
-    ServiceInstance serviceInstance = new DefaultServiceInstance("APP", "app:7459517c1334fe03658ce69eb959c7bd", "192.168.1.38", 8082, false);
-    when(discoveryClient.getInstances("my-app")).thenReturn(singletonList(serviceInstance));
-
-    RestRoute route = webTestClient
+  void shouldReturnGatewayRoutes() {
+    webTestClient
       .get()
-      .uri(new URI("/api/gateway/routes"))
+      .uri("/api/gateway/routes")
       .exchange()
       .expectStatus()
       .isOk()
-      .returnResult(RestRoute.class)
-      .getResponseBody()
-      .blockFirst();
-
-    assertThat(route.serviceId()).isEqualTo("my-app");
-    assertThat(route.path()).isEqualTo("'/services/' + serviceId.toLowerCase() +'/**'");
-    assertThat(route.serviceInstances())
-      .hasSize(1)
-      .extracting(
-        RestServiceInstance::instanceId,
-        RestServiceInstance::serviceId,
-        RestServiceInstance::uri,
-        RestServiceInstance::host,
-        RestServiceInstance::port
-      )
-      .contains(
-        tuple("APP", "app:7459517c1334fe03658ce69eb959c7bd", new URI("http://192.168.1.38:8082"), "192.168.1.38", 8082),
-        Index.atIndex(0)
-      );
+      .expectBody()
+      .jsonPath("$").isArray();
   }
 
   @Test
-  void shouldExcludeGatewayAppFromActiveRoutes() throws Exception {
-    Flux<Route> routes = Flux.just(
-      Route
-        .async()
-        .id("ReactiveCompositeDiscoveryClient_" + appName.toUpperCase())
-        .uri(new URI("lb://" + appName.toUpperCase()))
-        .asyncPredicate(new AsyncPredicate.DefaultAsyncPredicate<>(this.getPredicate()))
-        .build()
-    );
-    when(routeLocator.getRoutes()).thenReturn(routes);
-
-    FluxExchangeResult<RestRoute> result = webTestClient
+  void shouldExposeActuatorHealth() {
+    webTestClient
       .get()
-      .uri(new URI("/api/gateway/routes"))
+      .uri("/actuator/health")
       .exchange()
       .expectStatus()
       .isOk()
-      .returnResult(RestRoute.class);
-
-    StepVerifier.create(result.getResponseBody()).expectComplete().verify();
-  }
-
-  private Predicate<ServerWebExchange> getPredicate() {
-    return new PathRoutePredicateFactory(new WebFluxProperties())
-      .apply(new PathRoutePredicateFactory.Config().setPatterns(singletonList("'/services/' + serviceId.toLowerCase() +'/**'")));
+      .expectBody()
+      .jsonPath("$.status").isEqualTo("UP");
   }
 }

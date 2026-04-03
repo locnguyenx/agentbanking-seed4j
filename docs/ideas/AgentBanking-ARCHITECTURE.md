@@ -72,31 +72,31 @@ These are the external partners you depend on. Your system architecture isolates
 | **Platform**     | Start **locally** with Docker‑Compose (Kubernetes is only for production deployment), CI/CD, secrets, logging, monitoring, tracing, RBAC for infra.  |
 | **Foundation**   | API Gateway, Keycloak, Kafka, Redis, PostgreSQL, shared configs, logging/exporters.  |
 
-**Axon policy:**  
+**Temporal policy:**  
 - Only allowed in `core-service` bounded contexts where event‑sourcing and audit trails are explicitly required.  
 - Not allowed in `api-gateway`, `integration`, or `config`‑style services.
 
 **Kafka policy:**  
-- All services can publish/consume from Kafka, but **only `core-service` services may use Axon‑style event‑sourcing on Kafka**.  
+- All services can publish/consume from Kafka, but **only `core-service` services may use Temporal‑style event‑sourcing on Kafka**.  
 - Other services use Kafka for notifications and async work only.
 
 **Redis policy:**  
 - API Gateway: rate‑limiting.  
-- Core services: read‑side caches from Axon trackers.  
+- Core services: read‑side caches from Temporal trackers.  
 - Integration services: short‑lived state, retry‑related data.  
 
 ### Technology decisions (TDR skeleton)
 
 * **Optimal approach:**
   - **Communication strategy: REST‑plus‑events** → keep Kafka as “async notification only” and keep commands synchronous
-  - Use **Axon + Kafka only for bounded contexts** that really need:
+  - Use **Temporal + Kafka only for bounded contexts** that really need:
     - audit trails,
     - temporal replay,
     - complex state transitions (e.g., order lifecycle, payment flows).  
   - For “read‑only” or “config” services, use **plain Spring Boot + JPA + Kafka for notifications**, not full event‑sourcing.
-* **Axon**:
+* **Temporal**:
   - Usage: only applied to the `Transaction Orchestrator` service to follow SAGA pattern
-  - Version discipline: lock to one Axon major version across all services.  
+  - Version discipline: lock to one Temporal major version across all services.  
   - Event‑schemas are versioned and documented in `docs/events.adoc`. 
 * **Kafka**:  
   - Topics: `order.events`, `payment.events`, `user.events`, `notification.*`.  
@@ -119,7 +119,7 @@ These are the external partners you depend on. Your system architecture isolates
 
 - **Folder structure per service** must follow the template:
   - `domain` → domain logic + ports (no framework code).  
-  - `application` → use‑case orchestration, Axon handlers.  
+  - `application` → use‑case orchestration, Temporal handlers.  
   - `infrastructure` → web, persistence, Kafka, Redis, security adapters.
 - These rules are enforced via:
   - **ArchUnit** tests in CI/CD (e.g., “domain must not depend on Spring”).  

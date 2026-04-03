@@ -6,7 +6,7 @@
 
 **Architecture:** Install Seed4J CLI, initialize project with Gradle (not Maven), apply Seed4J modules for Spring Boot + hexagonal architecture, add ArchUnit enforcement, create Docker Compose infrastructure, and build common module with error handling
 
-**Tech Stack:** Java 25, Spring Boot 4, Gradle, Seed4J CLI, PostgreSQL, Redis, Kafka, Keycloak, Axon Framework, ArchUnit, SpringDoc OpenAPI, Spring Cloud Gateway
+**Tech Stack:** Java 25, Spring Boot 4, Gradle, Seed4J CLI, PostgreSQL, Redis, Kafka, Keycloak, Temporal, ArchUnit, SpringDoc OpenAPI, Spring Cloud Gateway
 
 ---
 
@@ -47,7 +47,7 @@ agentbanking-seed4j/
 # - Spring Cloud Gateway (seed4j apply spring-cloud-gateway)
 
 # Manual setup required:
-# - Axon Framework (CQRS/Event Sourcing) - no Seed4J module
+# - Temporal (Saga pattern) - no Seed4J module
 # - Keycloak-specific config (realm, client ID, issuer URI)
 ```
 
@@ -636,19 +636,9 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
 
-  axon-server:
-    image: axoniq/axonserver:2024.1.3
-    ports:
-      - "8024:8024"
-      - "8124:8124"
-    volumes:
-      - axonserver-data:/axonserver/data
-      - axonserver-events:/axonserver/events
 
 volumes:
   postgres-data:
-  axonserver-data:
-  axonserver-events:
 ```
 
 - [ ] **Step 2: Verify Docker Compose syntax**
@@ -787,7 +777,7 @@ git commit -m "feat: add common module with GlobalError schema"
 
 ---
 
-### Task 14: Manual Axon Framework Setup
+### Task 14: Manual Temporal Setup
 
 **BDD Scenarios:** N/A (manual setup, no Seed4J module)
 
@@ -798,35 +788,14 @@ git commit -m "feat: add common module with GlobalError schema"
 **Files:**
 - Modify: `build.gradle` (root and service modules)
 - Modify: `src/main/resources/application.yml`
-- Create: Axon configuration classes
+- Create: Temporal configuration classes
 
-- [ ] **Step 1: Add Axon dependencies to build.gradle**
+- [ ] **Step 1: Add Temporal dependencies to build.gradle**
 
-Add to root `build.gradle`:
-```groovy
-ext {
-    axonVersion = '4.11.0'
-}
 
-subprojects {
-    dependencies {
-        implementation "org.axonframework:axon-spring-boot-starter:${axonVersion}"
-        implementation "org.axonframework:axon-server-connector:${axonVersion}"
-        testImplementation "org.axonframework:axon-test:${axonVersion}"
-    }
-}
-```
+- [ ] **Step 2: Configure Temporal**
 
-- [ ] **Step 2: Configure Axon Server connection**
-
-Add to `src/main/resources/application.yml`:
-```yaml
-axon:
-  axonserver:
-    servers: localhost:8124
-```
-
-- [ ] **Step 3: Verify Axon configuration**
+- [ ] **Step 3: Verify Temporal configuration**
 
 Run: `./gradlew build`
 Expected: BUILD SUCCESS
@@ -835,7 +804,7 @@ Expected: BUILD SUCCESS
 
 ```bash
 git add build.gradle src/main/resources/application.yml
-git commit -m "build: add Axon Framework for CQRS/Event Sourcing"
+git commit -m "build: add Temporal for CQRS/Event Sourcing"
 ```
 
 ---
@@ -895,5 +864,5 @@ Expected: Application starts on port 8080
 | 11 | Add OpenAPI Documentation | Seed4J | US-S07, FR-S10 |
 | 12 | Create Docker Compose | Manual | US-S05, FR-S08 |
 | 13 | Create Common Module | Manual | US-S04, FR-S07 |
-| 14 | Manual Axon Framework Setup | Manual | US-S02 |
+| 14 | Manual Temporal Setup | Manual | US-S02 |
 | 15 | Verify Complete Build | Manual | NFR-S02 |
