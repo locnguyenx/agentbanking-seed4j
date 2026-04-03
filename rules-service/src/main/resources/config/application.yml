@@ -15,7 +15,7 @@ spring:
       poolName: Hikari
     password: agentbanking
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/agentbanking
+    url: jdbc:postgresql://localhost:5432/rules_service
     username: agentbanking
   data:
     jpa:

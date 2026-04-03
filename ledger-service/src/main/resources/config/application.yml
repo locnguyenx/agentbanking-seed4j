@@ -13,10 +13,10 @@ spring:
     hikari:
       auto-commit: false
       poolName: Hikari
-    password: ''
+    password: agentbanking
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/AgentBankingLedger
-    username: AgentBankingLedger
+    url: jdbc:postgresql://localhost:5432/ledger_service
+    username: agentbanking
   data:
     jpa:
       repositories:
