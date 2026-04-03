@@ -1,0 +1,17 @@
+{
+  "module" : "spring-boot-actuator",
+  "date" : "2026-04-03T09:52:49.200400300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "springConfigurationFormat" : "yaml",
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

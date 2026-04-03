@@ -1,0 +1,16 @@
+{
+  "module" : "java-archunit",
+  "date" : "2026-04-03T09:50:38.455231100Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "module" : "init",
+  "date" : "2026-04-03T09:48:40.060954200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

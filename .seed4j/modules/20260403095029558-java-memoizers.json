@@ -1,0 +1,16 @@
+{
+  "module" : "java-memoizers",
+  "date" : "2026-04-03T09:50:29.558823400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

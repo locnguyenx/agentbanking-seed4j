@@ -1,5 +1,0 @@
-logging:
-  config: classpath:logback.xml
-spring:
-  main:
-    banner-mode: 'off'

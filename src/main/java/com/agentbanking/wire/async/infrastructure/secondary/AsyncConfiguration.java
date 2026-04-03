@@ -1,0 +1,20 @@
+package com.agentbanking.wire.async.infrastructure.secondary;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import java.util.concurrent.Executor;
+
+@Configuration
+@EnableAsync
+@EnableScheduling
+class AsyncConfiguration {
+  @Bean
+  public Executor taskExecutor() {
+    var executor = new ThreadPoolTaskExecutor();
+    executor.initialize();
+    return executor;
+  }
+}

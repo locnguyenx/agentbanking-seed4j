@@ -1,0 +1,22 @@
+# This configuration is intended for development purpose, it's **your** responsibility to harden it for production
+services:
+  sonar:
+    image: sonarqube:25.12.0.117093-community
+    container_name: sonar
+    # Authentication is turned off for out of the box experience while trying out SonarQube
+    # For real use cases delete sonar.forceAuthentication variable or set sonar.forceAuthentication=true
+    environment:
+      - SONAR_FORCEAUTHENTICATION=false
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports:
+      - '127.0.0.1:9001:9000'
+  sonar-token:
+    build:
+      context: .
+      dockerfile: sonar/Dockerfile
+    container_name: sonar-token
+    environment:
+      - SEED4J_SONAR_URL=http://sonar:9000
+    depends_on:
+      - sonar

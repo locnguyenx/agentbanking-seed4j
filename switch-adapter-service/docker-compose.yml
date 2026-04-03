@@ -1,3 +1,0 @@
-include:
-  - src/main/docker/postgresql.yml
-  - src/main/docker/kafka.yml

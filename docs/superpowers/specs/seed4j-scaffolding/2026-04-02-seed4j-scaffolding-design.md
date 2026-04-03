@@ -293,19 +293,8 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
 
-  axon-server:
-    image: axoniq/axonserver:2024.1.3
-    ports:
-      - "8024:8024"
-      - "8124:8124"
-    volumes:
-      - axonserver-data:/axonserver/data
-      - axonserver-events:/axonserver/events
-
 volumes:
   postgres-data:
-  axonserver-data:
-  axonserver-events:
 ```
 
 ---

@@ -1,0 +1,16 @@
+{
+  "module" : "gradle-java",
+  "date" : "2026-04-03T09:49:10.053237800Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

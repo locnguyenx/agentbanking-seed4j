@@ -2,12 +2,20 @@ bundles = {}
 
 [versions]
 	archunit-junit5 = "1.4.1"
-	spring-cloud = "2025.1.0"
 	kafka-clients = "4.1.1"
 	testcontainers = "2.0.3"
+	json-web-token = "0.13.0"
 	reflections = "0.10.2"
+	sonarqube = "6.2.0.5505"
+	jacoco = "0.8.14"
 	spring-boot = "4.0.1"
 	springdoc-openapi = "3.0.0"
+
+	[plugins.sonarqube]
+		id = "org.sonarqube"
+
+		[plugins.sonarqube.version]
+			ref = "sonarqube"
 
 	[plugins.spring-boot]
 		id = "org.springframework.boot"
@@ -22,10 +30,6 @@ bundles = {}
 		[libraries.testcontainers-testcontainers-postgresql.version]
 			ref = "testcontainers"
 
-	[libraries.spring-boot-starter-oauth2-resource-server]
-		name = "spring-boot-starter-oauth2-resource-server"
-		group = "org.springframework.boot"
-
 	[libraries.testcontainers-kafka]
 		name = "testcontainers-kafka"
 		group = "org.testcontainers"
@@ -39,10 +43,6 @@ bundles = {}
 
 		[libraries.reflections.version]
 			ref = "reflections"
-
-	[libraries.spring-boot-starter-oauth2-client]
-		name = "spring-boot-starter-oauth2-client"
-		group = "org.springframework.boot"
 
 	[libraries.spring-boot-dependencies]
 		name = "spring-boot-dependencies"
@@ -81,9 +81,12 @@ bundles = {}
 		name = "flyway-database-postgresql"
 		group = "org.flywaydb"
 
-	[libraries.spring-boot-starter-restclient]
-		name = "spring-boot-starter-restclient"
-		group = "org.springframework.boot"
+	[libraries.jjwt-jackson]
+		name = "jjwt-jackson"
+		group = "io.jsonwebtoken"
+
+		[libraries.jjwt-jackson.version]
+			ref = "json-web-token"
 
 	[libraries.spring-boot-starter-test]
 		name = "spring-boot-starter-test"
@@ -93,12 +96,12 @@ bundles = {}
 		name = "spring-boot-starter-flyway"
 		group = "org.springframework.boot"
 
-	[libraries.spring-cloud-dependencies]
-		name = "spring-cloud-dependencies"
-		group = "org.springframework.cloud"
+	[libraries.jjwt-impl]
+		name = "jjwt-impl"
+		group = "io.jsonwebtoken"
 
-		[libraries.spring-cloud-dependencies.version]
-			ref = "spring-cloud"
+		[libraries.jjwt-impl.version]
+			ref = "json-web-token"
 
 	[libraries.archunit-junit5-api]
 		name = "archunit-junit5-api"
@@ -106,10 +109,6 @@ bundles = {}
 
 		[libraries.archunit-junit5-api.version]
 			ref = "archunit-junit5"
-
-	[libraries.spring-cloud-starter-bootstrap]
-		name = "spring-cloud-starter-bootstrap"
-		group = "org.springframework.cloud"
 
 	[libraries.spring-boot-starter-security-test]
 		name = "spring-boot-starter-security-test"
@@ -129,6 +128,13 @@ bundles = {}
 	[libraries.hikariCP]
 		name = "HikariCP"
 		group = "com.zaxxer"
+
+	[libraries.jjwt-api]
+		name = "jjwt-api"
+		group = "io.jsonwebtoken"
+
+		[libraries.jjwt-api.version]
+			ref = "json-web-token"
 
 	[libraries.spring-boot-starter-data-jpa]
 		name = "spring-boot-starter-data-jpa"
@@ -153,15 +159,3 @@ bundles = {}
 	[libraries.commons-lang3]
 		name = "commons-lang3"
 		group = "org.apache.commons"
-
-	[libraries.spring-cloud-starter-gateway-server-webflux]
-		name = "spring-cloud-starter-gateway-server-webflux"
-		group = "org.springframework.cloud"
-
-	[libraries.spring-cloud-starter-loadbalancer]
-		name = "spring-cloud-starter-loadbalancer"
-		group = "org.springframework.cloud"
-
-	[libraries.spring-boot-starter-webflux]
-		name = "spring-boot-starter-webflux"
-		group = "org.springframework.boot"

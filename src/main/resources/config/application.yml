@@ -1,0 +1,151 @@
+logging:
+  level:
+    com:
+      agentbanking: INFO
+spring:
+  application:
+    name: agentBanking
+  jackson:
+    default-property-inclusion: non_absent
+  profiles:
+    active: '@spring.profiles.active@'
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  task:
+    execution:
+      pool:
+        keep-alive: 10s
+        max-size: 16
+        queue-capacity: 100
+      thread-name-prefix: agentBanking-task-
+    scheduling:
+      pool:
+        size: 2
+      thread-name-prefix: agentBanking-scheduling-
+  datasource:
+    rules:
+      url: jdbc:postgresql://${RULES_DB_HOST:localhost}:${RULES_DB_PORT:5432}/rules_db
+      username: ${RULES_DB_USERNAME:agentbanking}
+      password: ${RULES_DB_PASSWORD:agentbanking}
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        pool-name: RulesHikariPool
+        auto-commit: false
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 300000
+        connection-timeout: 20000
+        max-lifetime: 1200000
+    ledger:
+      url: jdbc:postgresql://${LEDGER_DB_HOST:localhost}:${LEDGER_DB_PORT:5432}/ledger_db
+      username: ${LEDGER_DB_USERNAME:agentbanking}
+      password: ${LEDGER_DB_PASSWORD:agentbanking}
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        pool-name: LedgerHikariPool
+        auto-commit: false
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 300000
+        connection-timeout: 20000
+        max-lifetime: 1200000
+    onboarding:
+      url: jdbc:postgresql://${ONBOARDING_DB_HOST:localhost}:${ONBOARDING_DB_PORT:5432}/onboarding_db
+      username: ${ONBOARDING_DB_USERNAME:agentbanking}
+      password: ${ONBOARDING_DB_PASSWORD:agentbanking}
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        pool-name: OnboardingHikariPool
+        auto-commit: false
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 300000
+        connection-timeout: 20000
+        max-lifetime: 1200000
+    switchadapter:
+      url: jdbc:postgresql://${SWITCH_DB_HOST:localhost}:${SWITCH_DB_PORT:5432}/switch_db
+      username: ${SWITCH_DB_USERNAME:agentbanking}
+      password: ${SWITCH_DB_PASSWORD:agentbanking}
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        pool-name: SwitchHikariPool
+        auto-commit: false
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 300000
+        connection-timeout: 20000
+        max-lifetime: 1200000
+    biller:
+      url: jdbc:postgresql://${BILLER_DB_HOST:localhost}:${BILLER_DB_PORT:5432}/biller_db
+      username: ${BILLER_DB_USERNAME:agentbanking}
+      password: ${BILLER_DB_PASSWORD:agentbanking}
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        pool-name: BillerHikariPool
+        auto-commit: false
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 300000
+        connection-timeout: 20000
+        max-lifetime: 1200000
+  jpa:
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 50
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 50
+management:
+  endpoint:
+    health:
+      access: read-only
+      probes:
+        enabled: true
+      show-details: always
+  endpoints:
+    access:
+      default: none
+    jmx:
+      exposure:
+        exclude: '*'
+    web:
+      base-path: /management
+      exposure:
+        include:
+        - configprops
+        - env
+        - health
+        - info
+        - logfile
+        - loggers
+        - threaddump
+server:
+  port: 8080
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    '[auto.offset.reset]': earliest
+    '[group.id]': myapp
+    '[key.deserializer]': org.apache.kafka.common.serialization.StringDeserializer
+    '[value.deserializer]': org.apache.kafka.common.serialization.StringDeserializer
+  polling:
+    timeout: 10000
+  producer:
+    '[key.serializer]': org.apache.kafka.common.serialization.StringSerializer
+    '[value.serializer]': org.apache.kafka.common.serialization.StringSerializer
+springdoc:
+  enable-native-support: true
+  swagger-ui:
+    operationsSorter: alpha
+    tagsSorter: alpha
+    tryItOutEnabled: true
+application:
+  security:
+    jwt-base64-secret: YWMyODU5ODQzN2UzNmUxNjJhYWU0YWFiZGNlMmMwNzJhM2E1OWRmNzczMjNkZWJmYzgxOGZiYjcyNzg0YTFkNQ==

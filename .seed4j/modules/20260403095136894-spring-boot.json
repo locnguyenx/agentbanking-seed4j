@@ -1,0 +1,17 @@
+{
+  "module" : "spring-boot",
+  "date" : "2026-04-03T09:51:36.894017900Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "springConfigurationFormat" : "yaml",
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

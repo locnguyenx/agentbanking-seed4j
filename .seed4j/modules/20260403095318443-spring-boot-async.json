@@ -1,0 +1,18 @@
+{
+  "module" : "spring-boot-async",
+  "date" : "2026-04-03T09:53:18.443563300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "springConfigurationFormat" : "yaml",
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "serverPort" : 8080,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}
