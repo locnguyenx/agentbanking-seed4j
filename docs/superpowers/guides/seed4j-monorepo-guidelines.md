@@ -114,269 +114,178 @@ Seed4J modules can depend on **features** (abstract capabilities) rather than sp
 
 ### 2.3 Complete Module List by Official Category
 
-#### Init & Setup
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `init` | None | `projectName`, `baseName`, `nodePackageManager`, `endOfLine`, `indentation`, `springConfigurationFormat` | Project initialization |
-| `prettier` | None | `endOfLine`, `indentation` | Code formatting |
-| `infinitest-filters` | None | - | Infinitest continuous testing filters |
-| `license-apache` | None | - | Apache 2.0 license file |
-| `license-mit` | None | - | MIT license file |
+#### Complete Module Catalog (168 modules)
 
-#### Build Tools
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `maven-java` | `init` | `packageName` | Maven project with pom.xml |
-| `maven-wrapper` | `maven-java` | - | Maven wrapper scripts |
-| `gradle-java` | `init` | `packageName` | Gradle project with Kotlin DSL |
-| `gradle-wrapper` | `gradle-java` | - | Gradle wrapper scripts |
-| `frontend-maven-plugin` | `spring-server`, `spring-mvc-server`, `client-core`, `maven-java` | - | Frontend Maven plugin |
-| `frontend-maven-plugin-cache` | `frontend-maven-plugin` | - | Frontend Maven plugin cache |
-| `frontend-maven-plugin-merge-coverage` | `cypress-component-tests`, `client-core`, `spring-server`, `spring-mvc-server`, `maven-java` | - | Coverage merge |
-| `node-gradle-plugin` | `spring-server`, `spring-mvc-server`, `client-core`, `gradle-java` | - | Node Gradle plugin |
-
-#### Java Core
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `java-base` | `java-build-tool` | - | Java base classes (Assert, etc.) |
-| `java-enums` | `java-base` | - | Enum utilities |
-| `java-memoizers` | `java-base` | - | Memoization utilities |
-| `java-archunit` | `spring-server` | - | ArchUnit architecture tests |
-| `checkstyle` | `java-build-tool` | - | Checkstyle code style |
-| `modernizer` | `java-build-tool` | - | Modernizer Maven plugin |
-| `jacoco` | `java-build-tool` | - | JaCoCo code coverage |
-| `jacoco-with-min-coverage-check` | `java-build-tool` | - | JaCoCo with minimum coverage |
-| `protobuf` | `java-base` | - | Protocol Buffers |
-| `protobuf-backwards-compatibility-check` | `protobuf`, `maven-java` | - | Protobuf compatibility |
-| `jmolecules` | `java-build-tool` | - | jMolecules architecture annotations |
-| `jqassistant` | `java-build-tool` | - | jQAssistant code analysis |
-| `jqassistant-jmolecules` | `jqassistant`, `jmolecules` | - | jQAssistant jMolecules |
-| `jqassistant-spring` | `jqassistant`, `spring-boot` | - | jQAssistant Spring |
-| `git-information` | `spring-boot-actuator` | - | Git commit info in build |
-| `jib` | `java-build-tool` | - | Jib container image building |
-
-#### Spring Boot Core
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `spring-boot` | `java-build-tool`, `java-base` | `serverPort` | Spring Boot core |
-| `spring-boot-actuator` | `spring-server` | - | Spring Boot Actuator |
-| `spring-boot-async` | `spring-boot` | - | Async support |
-| `spring-boot-cache` | `spring-boot` | - | Spring Cache |
-| `spring-boot-devtools` | `spring-boot` | - | Spring Boot DevTools |
-| `spring-boot-local-profile` | `spring-boot` | - | Local Spring profile |
-| `spring-boot-docker-compose` | `maven-java`, `spring-boot` | - | Spring Boot Docker Compose |
-
-#### Spring Boot - Server Stack
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `spring-boot-mvc-empty` | `spring-boot` | - | Spring MVC (empty, no sample) |
-| `spring-boot-webflux-empty` | `spring-boot` | - | WebFlux (empty, no sample) |
-| `spring-boot-webflux-netty` | `spring-boot-webflux-empty` | - | WebFlux with Netty |
-| `spring-boot-tomcat` | `spring-boot-mvc-empty`, `logs-spy` | - | Tomcat server |
-| `spring-boot-thymeleaf` | `spring-server` | - | Thymeleaf template engine |
-
-#### Spring Boot - Spring Cloud
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `spring-cloud` | `spring-boot-actuator` | - | Spring Cloud BOM |
-| `gateway` | `spring-boot-webflux-empty`, `spring-cloud` | `basePackage`, `baseName` | Spring Cloud Gateway |
-| `consul` | `spring-boot-actuator` | - | Consul service discovery |
-| `eureka-client` | `spring-cloud` | - | Eureka client |
-
-#### Spring Boot - Database
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `datasource-postgresql` | `spring-boot` | - | PostgreSQL datasource |
-| `datasource-mysql` | `spring-boot` | - | MySQL datasource |
-| `datasource-mariadb` | `spring-boot` | - | MariaDB datasource |
-| `datasource-mssql` | `spring-boot` | - | SQL Server datasource |
-| `jpa-postgresql` | `datasource-postgresql` | - | JPA with PostgreSQL |
-| `jpa-mysql` | `datasource-mysql` | - | JPA with MySQL |
-| `jpa-mariadb` | `datasource-mariadb` | - | JPA with MariaDB |
-| `jpa-mssql` | `datasource-mssql` | - | JPA with SQL Server |
-| `hibernate-2nd-level-cache` | `jcache`, `jpa-persistence` | - | Hibernate 2nd level cache |
-| `jooq-postgresql` | `datasource-postgresql` | - | jOOQ with PostgreSQL |
-| `jooq-mysql` | `datasource-mysql` | - | jOOQ with MySQL |
-| `jooq-mariadb` | `datasource-mariadb` | - | jOOQ with MariaDB |
-| `jooq-mssql` | `datasource-mssql` | - | jOOQ with SQL Server |
-
-#### Spring Boot - NoSQL
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `mongodb` | `spring-boot` | - | MongoDB support |
-| `cassandra` | `spring-boot` | - | Cassandra support |
-| `neo4j` | `spring-boot` | - | Neo4j graph database |
-| `redis` | `spring-boot` | - | Redis support |
-
-#### Spring Boot - Migration
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `liquibase` | `datasource` | - | Liquibase migration |
-| `liquibase-async` | `liquibase`, `logs-spy` | - | Liquibase async |
-| `liquibase-linter` | `liquibase`, `maven-java` | - | Liquibase linter |
-| `flyway` | `datasource` | - | Flyway migration |
-| `flyway-postgresql` | `flyway`, `datasource-postgresql` | - | Flyway PostgreSQL |
-| `flyway-mysql` | `flyway`, `datasource-mysql` | - | Flyway MySQL |
-| `flyway-mariadb` | `flyway`, `datasource-mariadb` | - | Flyway MariaDB |
-| `flyway-mssql` | `flyway`, `datasource-mssql` | - | Flyway SQL Server |
-| `mongock` | `mongodb` | - | Mongock MongoDB migration |
-| `neo4j-migrations` | `neo4j` | - | Neo4j migrations |
-| `cassandra-migration` | `cassandra` | - | Cassandra migration |
-
-#### Spring Boot - Cache
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `caffeine-cache` | `spring-boot-cache` | - | Caffeine in-memory cache |
-| `ehcache-java-config` | `spring-boot-cache` | - | Ehcache Java config |
-| `ehcache-xml-config` | `spring-boot-cache` | - | Ehcache XML config |
-
-#### Spring Boot - Security
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `spring-boot-jwt` | `java-base`, `spring-mvc-server` | - | JWT authentication |
-| `spring-boot-jwt-basic-auth` | `spring-boot-jwt`, `springdoc-jwt` | - | JWT basic auth |
-| `spring-boot-oauth2` | `java-base`, `spring-mvc-server`, `java-memoizers` | - | OAuth2 authentication |
-| `spring-boot-oauth2-account` | `spring-boot-oauth2` | - | OAuth2 Account service |
-| `spring-boot-oauth2-auth0` | `spring-boot-oauth2` | - | OAuth2 Auth0 |
-| `spring-boot-oauth2-okta` | `spring-boot-oauth2` | - | OAuth2 Okta |
-| `kipe-authorization` | `authentication` | - | Kipe authorization |
-| `kipe-expression` | `authentication` | - | Kipe expression |
-
-#### Spring Boot - Messaging
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `spring-boot-kafka` | `spring-boot` | - | Apache Kafka |
-| `spring-boot-kafka-akhq` | `spring-boot-kafka` | - | Kafka AHQ UI |
-| `spring-boot-kafka-sample-producer-consumer` | `spring-boot-kafka` | - | Kafka sample |
-| `spring-boot-pulsar` | `spring-boot` | - | Apache Pulsar |
-
-#### Spring Boot - Testing
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `logs-spy` | `spring-boot` | - | LogSpy test utility |
-| `spring-boot-cucumber-mvc` | `spring-mvc-server` | - | Cucumber BDD MVC |
-| `spring-boot-cucumber-webflux` | `spring-boot-webflux-netty` | - | Cucumber BDD WebFlux |
-| `spring-boot-cucumber-jpa-reset` | `spring-boot-cucumber`, `jpa-persistence` | - | Cucumber JPA reset |
-| `spring-boot-cucumber-jwt-authentication` | `spring-boot-cucumber`, `spring-boot-jwt` | - | Cucumber JWT auth |
-| `spring-boot-cucumber-oauth2-authentication` | `spring-boot-cucumber`, `spring-boot-oauth2` | - | Cucumber OAuth2 auth |
-| `approval-tests` | `java-build-tool` | - | ApprovalTests |
-| `jqwik` | `java-build-tool` | - | jqwik property testing |
-| `arch-unit-ts` | `client-core` | - | ArchUnit TypeScript |
-
-#### SpringDoc (OpenAPI)
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `springdoc-mvc-openapi` | `spring-mvc-server` | - | SpringDoc MVC OpenAPI |
-| `springdoc-webflux-openapi` | `spring-boot-webflux-netty` | - | SpringDoc WebFlux OpenAPI |
-| `springdoc-jwt` | `springdoc`, `spring-boot-jwt` | - | SpringDoc JWT |
-| `springdoc-oauth2` | `springdoc`, `spring-boot-oauth2` | - | SpringDoc OAuth2 |
-| `springdoc-oauth2-auth0` | `springdoc`, `spring-boot-oauth2-auth0` | - | SpringDoc Auth0 |
-| `springdoc-oauth2-okta` | `springdoc`, `spring-boot-oauth2-okta` | - | SpringDoc Okta |
-| `openapi-contract` | `spring-mvc-server`, `maven-java` | - | OpenAPI contract |
-| `openapi-backwards-compatibility-check` | `openapi-contract` | - | OpenAPI compatibility |
-
-#### Spring Boot - AI
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `langchain4j` | `spring-boot` | - | LangChain4j AI |
-| `spring-boot-langchain4j-sample` | `spring-mvc-server`, `langchain4j` | - | LangChain4j sample |
-
-#### Spring Boot - Other
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `logstash` | `spring-boot` | - | Logstash JSON logging |
-| `internationalized-errors` | `java-enums`, `spring-boot-mvc-empty` | - | i18n error messages |
-| `pagination-domain` | `java-base` | - | Pagination domain |
-| `jpa-pagination` | `pagination-domain`, `jpa-persistence` | - | JPA pagination |
-| `rest-pagination` | `pagination-domain`, `springdoc` | - | REST pagination |
-
-#### Frontend
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `typescript` | `init`, `prettier` | - | TypeScript base |
-| `optional-typescript` | `typescript` | - | Optional type |
-| `ts-loader` | `client-core` | - | TypeScript loader |
-| `ts-pagination-domain` | `client-core` | - | TS pagination domain |
-| `ts-rest-pagination` | `ts-pagination-domain` | - | TS REST pagination |
-| `angular-core` | `init`, `prettier` | - | Angular core |
-| `angular-health` | `angular-core`, `spring-boot-actuator` | - | Angular health |
-| `angular-jwt` | `angular-core` | - | Angular JWT |
-| `angular-oauth2-keycloak` | `angular-core` | - | Angular OAuth2 Keycloak |
-| `angular-i18n` | `angular-core` | - | Angular i18n |
-| `angular-tailwind` | `angular-core` | - | Angular Tailwind |
-| `vue-core` | `typescript`, `prettier` | - | Vue core |
-| `vue-router` | `vue-core` | - | Vue Router |
-| `vue-pinia` | `vue-core` | - | Vue Pinia |
-| `vue-jwt` | `vue-core` | - | Vue JWT |
-| `vue-oauth2-keycloak` | `vue-core` | - | Vue OAuth2 Keycloak |
-| `vue-i18next` | `vue-core` | - | Vue i18next |
-| `react-core` | `typescript`, `prettier` | - | React core |
-| `react-i18next` | `react-core` | - | React i18next |
-| `react-jwt` | `react-core` | - | React JWT |
-| `svelte-core` | `init`, `prettier` | - | Svelte core |
-
-#### Frontend Testing
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `cypress-e2e` | `client-core` | - | Cypress E2E |
-| `cypress-component-tests` | `client-core` | - | Cypress component |
-| `cypress-merge-coverage` | `cypress-component-tests` | - | Cypress coverage |
-| `playwright-e2e` | `client-core` | - | Playwright E2E |
-| `playwright-component-tests` | `client-core` | - | Playwright component |
-
-#### Frontend UI
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `tikui` | `client-core` | - | Tikui design system |
-| `thymeleaf-template` | `spring-boot-thymeleaf` | - | Thymeleaf templates |
-| `thymeleaf-template-htmx-webjars` | `htmx-webjars`, `thymeleaf-template` | - | Thymeleaf + HTMX |
-| `thymeleaf-template-alpinejs-webjars` | `alpinejs-webjars`, `thymeleaf-template` | - | Thymeleaf + Alpine.js |
-| `thymeleaf-template-tailwindcss` | `thymeleaf-template` | - | Thymeleaf + Tailwind |
-| `webjars-locator` | `spring-boot-thymeleaf` | - | WebJars locator |
-| `htmx-webjars` | `webjars-locator` | - | HTMX WebJars |
-| `alpinejs-webjars` | `webjars-locator` | - | Alpine.js WebJars |
-
-#### CI/CD
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `github-actions-maven` | `java-build-tool` | - | GitHub Actions Maven |
-| `github-actions-gradle` | `java-build-tool` | - | GitHub Actions Gradle |
-| `gitlab-ci-maven` | `java-build-tool` | - | GitLab CI Maven |
-| `gitlab-ci-gradle` | `java-build-tool` | - | GitLab CI Gradle |
-| `renovate` | `java-build-tool` | - | Renovate dependency updates |
-| `sonarqube-java-backend` | `java-build-tool`, `code-coverage-java` | - | SonarQube Java |
-| `sonarqube-java-backend-and-frontend` | `java-build-tool`, `code-coverage-java` | - | SonarQube full stack |
-| `sonarqube-typescript` | `typescript` | - | SonarQube TypeScript |
-
-#### Dev Environment
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `github-codespaces` | None | - | GitHub Codespaces |
-| `gitpod` | None | - | Gitpod config |
-| `dockerfile-maven` | `maven-wrapper` | - | Dockerfile Maven |
-| `dockerfile-gradle` | `gradle-wrapper` | - | Dockerfile Gradle |
-
-#### Documentation
-| Module | Dependencies | Parameters | Description |
-|--------|-------------|------------|-------------|
-| `application-service-hexagonal-architecture-documentation` | None | - | Hexagonal architecture docs |
-| `front-hexagonal-architecture` | None | - | Frontend hexagonal architecture docs |
-
-#### Samples (Rank D - Demo Only)
 | Module | Dependencies | Description |
 |--------|-------------|-------------|
-| `sample-feature` | `cucumber-authentication`, `springdoc`, `java-base`, `kipe-expression`, `kipe-authorization` | Sample feature |
-| `sample-jpa-persistence` | `sample-schema`, `spring-boot-cucumber-jpa-reset` | Sample JPA |
-| `sample-cassandra-persistence` | `sample-feature`, `cassandra-migration` | Sample Cassandra |
-| `sample-mongodb-persistence` | `sample-feature`, `mongock` | Sample MongoDB |
-| `sample-postgresql-flyway-changelog` | `flyway-postgresql`, `sample-feature`, `jpa-postgresql` | Sample Flyway PG |
-| `sample-not-postgresql-flyway-changelog` | `flyway`, `sample-feature` | Sample Flyway non-PG |
-| `sample-liquibase-changelog` | `liquibase`, `sample-feature` | Sample Liquibase |
-
-#### Extension
-| Module | Dependencies | Description |
-|--------|-------------|-------------|
-| `seed4j-extension` | `spring-boot` | Seed4J extension support |
+| init | - | Init project |
+| prettier | module:init | Format project with prettier |
+| infinitest-filters | - | Add filter for infinitest, the continuous test runner |
+| license-apache | - | Add APACHE license file |
+| license-mit | - | Add MIT license file |
+| maven-java | module:init | Init Maven project with pom.xml |
+| maven-wrapper | module:maven-java | Add maven wrapper |
+| gradle-java | module:init | Init Gradle project with kotlin DSL |
+| gradle-wrapper | module:gradle-java | Add gradle wrapper |
+| frontend-maven-plugin | feature:spring-server, feature:spring-mvc-server, feature:client-core, module:maven-java | Add Frontend Maven Plugin |
+| frontend-maven-plugin-cache | module:frontend-maven-plugin | Add cache - by computing resources checksum - to avoid rebuilding frontend on successive maven builds |
+| frontend-maven-plugin-merge-coverage | module:cypress-component-tests, feature:client-core, feature:spring-server, feature:spring-mvc-server, module:maven-java | Merge Cypress and vitest code coverage |
+| node-gradle-plugin | feature:spring-server, feature:spring-mvc-server, feature:client-core, module:gradle-java | Add node-gradle plugin for building frontend with Gradle |
+| java-base | feature:java-build-tool | Add Base classes and Error domain to project |
+| java-enums | module:java-base | Add simple enums mapper |
+| java-memoizers | module:java-base | Add simple memoizers factory |
+| java-archunit | feature:spring-server | Add Hexagonal Arch Unit Tests to project |
+| checkstyle | feature:java-build-tool | Add Checkstyle configuration to enforce code style rules |
+| modernizer | feature:java-build-tool | Add Modernizer build plugin for detecting uses of legacy APIs which modern Java versions supersede. These modern APIs are often more performant, safer, and idiomatic than the legacy equivalents. |
+| jacoco | feature:java-build-tool | Add JaCoCo for code coverage reporting |
+| jacoco-with-min-coverage-check | feature:java-build-tool | Add JaCoCo for code coverage reporting and 100% coverage check |
+| protobuf | module:java-base | Add protobuf support |
+| protobuf-backwards-compatibility-check | module:protobuf, module:maven-java | Add protobuf backwards compatibility check |
+| jmolecules | feature:java-build-tool | Add support for jMolecules documentation annotations based on DDD patterns such as @BoundedContext, @ValueObject, @Entity, @AggregateRoot... |
+| jqassistant | feature:java-build-tool | Setup jQAssistant for documentation and analysis of the project |
+| jqassistant-jmolecules | module:jqassistant, module:jmolecules | Add jMolecules support for jQAssistant |
+| jqassistant-spring | module:jqassistant, module:spring-boot | Add Spring support for jQAssistant |
+| git-information | module:spring-boot-actuator | Injecting Git Information into Spring |
+| jib | feature:java-build-tool | Add Docker image building with Jib |
+| spring-boot | feature:java-build-tool, module:java-base | Init Spring Boot project with dependencies, App, and properties |
+| spring-boot-actuator | feature:spring-server | Add Spring Boot Actuator to the project |
+| spring-boot-async | module:spring-boot | Add asynchronous execution and scheduling configuration |
+| spring-boot-cache | module:spring-boot | Add simple cache |
+| spring-boot-devtools | module:spring-boot | Add Spring Boot devtools. |
+| spring-boot-local-profile | module:spring-boot | Use Spring local profile by default for development. |
+| spring-boot-docker-compose | module:maven-java, module:spring-boot | Configure Spring Boot and docker compose integration, to make local development easier |
+| spring-boot-mvc-empty | module:spring-boot | Empty module: do not use alone. You should add another module in Spring MVC Server |
+| spring-boot-webflux-empty | module:spring-boot | Empty module: do not use alone. You should add module Spring Boot Webflux Netty |
+| spring-boot-webflux-netty | module:spring-boot-webflux-empty | Add Spring Boot Webflux Netty |
+| spring-boot-tomcat | module:spring-boot-mvc-empty, module:logs-spy | Add Spring Boot MVC with Tomcat |
+| spring-boot-thymeleaf | feature:spring-server | Add Spring Boot Thymeleaf to the project |
+| spring-cloud | module:spring-boot-actuator | Add Spring Cloud Config Client |
+| gateway | module:spring-boot-webflux-empty, module:spring-cloud | Add Spring Cloud Gateway |
+| consul | module:spring-boot-actuator | Add Spring Cloud Consul config and discovery |
+| eureka-client | module:spring-cloud | Add Spring Cloud Eureka Client |
+| datasource-postgresql | module:spring-boot | Add PostgreSQL datasource to Spring project |
+| datasource-mysql | module:spring-boot | Add MySQL datasource to Spring project |
+| datasource-mariadb | module:spring-boot | Add MariaDB datasource to Spring project |
+| datasource-mssql | module:spring-boot | Add MsSQL datasource to Spring project |
+| jpa-postgresql | module:datasource-postgresql | Add JPA with PostgreSQL to project |
+| jpa-mysql | module:datasource-mysql | Add JPA with MySQL to project |
+| jpa-mariadb | module:datasource-mariadb | Add JPA with MariaDB to project |
+| jpa-mssql | module:datasource-mssql | Add JPA with MsSQL to project |
+| hibernate-2nd-level-cache | feature:jcache, feature:jpa-persistence | Add Hibernate second level cache configuration to project |
+| jooq-postgresql | module:datasource-postgresql | Add Jooq with PostgreSQL to project |
+| jooq-mysql | module:datasource-mysql | Add Jooq with MySQL to project |
+| jooq-mariadb | module:datasource-mariadb | Add Jooq with MariaDB to project |
+| jooq-mssql | module:datasource-mssql | Add Jooq with MsSQL to project |
+| mongodb | module:spring-boot | Add MongoDB drivers and dependencies, with testcontainers |
+| cassandra | module:spring-boot | Add Cassandra drivers and dependencies |
+| neo4j | module:spring-boot | Add Neo4j drivers and dependencies, with testcontainers |
+| redis | module:spring-boot | Add Redis drivers and dependencies, with testcontainers |
+| liquibase | feature:datasource | Add Liquibase |
+| liquibase-async | module:liquibase, module:logs-spy | Support updating the database asynchronously with Liquibase |
+| liquibase-linter | module:liquibase, module:maven-java | Configure a linter for the Liquibase migration scripts |
+| flyway | feature:datasource | Add Flyway |
+| flyway-mariadb | module:flyway, module:datasource-mariadb | Add Flyway MariaDB |
+| flyway-mssql | module:flyway, module:datasource-mssql | Add Flyway PostgreSQL |
+| flyway-mysql | module:flyway, module:datasource-mysql | Add Flyway MySQL |
+| flyway-postgresql | module:flyway, module:datasource-postgresql | Add Flyway PostgreSQL |
+| mongock | module:mongodb | Add Mongock |
+| neo4j-migrations | module:neo4j | Add neo4j migrations |
+| cassandra-migration | module:cassandra | Add Cassandra Migration tools |
+| caffeine-cache | module:spring-boot-cache | Add caffeine cache |
+| ehcache-java-config | module:spring-boot-cache | Add Ehcache with Java configuration |
+| ehcache-xml-config | module:spring-boot-cache | Add Ehcache with XML configuration |
+| spring-boot-jwt | module:java-base, feature:spring-mvc-server | Add Spring Security JWT |
+| spring-boot-jwt-basic-auth | module:spring-boot-jwt, module:springdoc-jwt | Add Basic Auth for Spring Security JWT |
+| spring-boot-oauth2 | module:java-base, feature:spring-mvc-server, module:java-memoizers | Add a Spring Security: OAuth 2.0 / OIDC Authentication (stateful, works with Keycloak and Okta) |
+| spring-boot-oauth2-account | module:spring-boot-oauth2 | Add a account context for OAuth 2.0 / OIDC Authentication |
+| spring-boot-oauth2-auth0 | module:spring-boot-oauth2 | Add a Spring Security: OAuth 2.0 / OIDC Authentication / Auth0 Provider (stateful, works with Keycloak and Auth0) |
+| spring-boot-oauth2-okta | module:spring-boot-oauth2 | Add a Spring Security: OAuth 2.0 / OIDC Authentication / Okta Provider (stateful, works with Keycloak and Okta) |
+| kipe-authorization | feature:authentication | Ease authorization matrices definition |
+| kipe-expression | feature:authentication | Create a new security expression for spring security: can('action', #element) |
+| spring-boot-kafka | module:spring-boot | Add Kafka dependencies, with testcontainers |
+| spring-boot-kafka-akhq | module:spring-boot-kafka | Add AKHQ |
+| spring-boot-kafka-sample-producer-consumer | module:spring-boot-kafka | Add sample Kafka producer and consumer |
+| spring-boot-pulsar | module:spring-boot | Add Pulsar dependencies, with testcontainers |
+| logs-spy | module:spring-boot | Add LogsSpy JUnit5 extension to project |
+| spring-boot-cucumber-mvc | feature:spring-mvc-server | Add Cucumber integration for Spring MVC to project |
+| spring-boot-cucumber-webflux | module:spring-boot-webflux-netty | Add Cucumber integration for Webflux to project |
+| spring-boot-cucumber-jpa-reset | feature:spring-boot-cucumber, feature:jpa-persistence | Add jpa reset for cucumber |
+| spring-boot-cucumber-jwt-authentication | feature:spring-boot-cucumber, module:spring-boot-jwt | Add JWT authentication steps for cucumber |
+| spring-boot-cucumber-oauth2-authentication | feature:spring-boot-cucumber, module:spring-boot-oauth2 | Add OAuth2 authentication steps for cucumber |
+| approval-tests | feature:java-build-tool | Add ApprovalTests library for Approval testing |
+| jqwik | feature:java-build-tool | Add jqwik library for Property Based Testing |
+| arch-unit-ts | feature:client-core | Add Arch unit ts |
+| springdoc-mvc-openapi | feature:spring-mvc-server | Add springdoc-openapi for spring MVC |
+| springdoc-webflux-openapi | module:spring-boot-webflux-netty | Add springdoc-openapi for webflux |
+| springdoc-jwt | feature:springdoc, module:spring-boot-jwt | Add JWT authentication for springdoc |
+| springdoc-oauth2 | feature:springdoc, module:spring-boot-oauth2 | Add OAuth2 authentication for springdoc |
+| springdoc-oauth2-auth0 | feature:springdoc, module:spring-boot-oauth2-auth0 | Add Auth0 authentication for springdoc |
+| springdoc-oauth2-okta | feature:springdoc, module:spring-boot-oauth2-okta | Add Okta authentication for springdoc |
+| openapi-contract | feature:spring-mvc-server, module:maven-java | Generates OpenAPI contract at build time using openapi-maven-plugin |
+| openapi-backwards-compatibility-check | module:openapi-contract | Check backwards incompatible changes to OpenAPI contract during build |
+| langchain4j | module:spring-boot | Add LangChain4j |
+| spring-boot-langchain4j-sample | feature:spring-mvc-server, module:langchain4j | Add LangChain4j sample |
+| logstash | module:spring-boot | Add Logstash TCP appender |
+| internationalized-errors | module:java-enums, module:spring-boot-mvc-empty | Add internationalization for application errors |
+| pagination-domain | module:java-base | Add domain model for pagination management |
+| jpa-pagination | module:pagination-domain, feature:jpa-persistence | Add utility class for JPA pagination |
+| rest-pagination | module:pagination-domain, feature:springdoc | Add rest models for pagination handling |
+| typescript | module:init, module:prettier | Init Typescript project |
+| optional-typescript | module:typescript | Add Optional class domain to project |
+| ts-loader | feature:client-core | Helper class to represent loading states |
+| ts-pagination-domain | feature:client-core | Add webapp domain for pagination |
+| ts-rest-pagination | module:ts-pagination-domain | Add rest pagination to the frontend webapp |
+| angular-core | module:init, module:prettier | Add Angular + Angular CLI |
+| angular-health | module:angular-core, module:spring-boot-actuator | Angular Health |
+| angular-i18n | module:angular-core | Add Angular internationalization |
+| angular-jwt | module:angular-core | Add Angular with authentication JWT |
+| angular-oauth2-keycloak | module:angular-core | Add OAuth2 authentication |
+| angular-tailwind | module:angular-core | Add Tailwind CSS to an Angular project |
+| vue-core | module:typescript, module:prettier | Add Vue+Vite |
+| vue-router | module:vue-core | Add Vue Router |
+| vue-pinia | module:vue-core | Add pinia for state management |
+| vue-jwt | module:vue-core | Add JWT authentication to Vue |
+| vue-oauth2-keycloak | module:vue-core | Add OAuth2 Keycloak authentication to Vue |
+| vue-i18next | module:vue-core | Add vue internationalization |
+| react-core | module:typescript, module:prettier | Add React+Vite with minimal CSS |
+| react-i18next | module:react-core | Add react internationalization |
+| react-jwt | module:react-core | Add JWT Login React |
+| svelte-core | module:init, module:prettier | Add Svelte |
+| cypress-e2e | feature:client-core | Setup E2E tests using Cypress |
+| cypress-component-tests | feature:client-core | Setup frontend component tests using Cypress |
+| cypress-merge-coverage | module:cypress-component-tests | Merge coverage from unit test vitest and component test cypress. Not working with Angular |
+| playwright-e2e | feature:client-core | Configure E2E tests using Playwright |
+| playwright-component-tests | feature:client-core | Configure frontend component tests using Playwright |
+| tikui | feature:client-core | Add Tikui, a pattern library to build your styles |
+| thymeleaf-template | module:spring-boot-thymeleaf | Add thymeleaf skeleton layout files to the project |
+| thymeleaf-template-htmx-webjars | module:htmx-webjars, module:thymeleaf-template | Add htmx webjars scripts to thymeleaf layout |
+| thymeleaf-template-alpinejs-webjars | module:alpinejs-webjars, module:thymeleaf-template | Add alpine webjars scripts to thymeleaf layout |
+| thymeleaf-template-tailwindcss | module:thymeleaf-template | Add tailwindcss to the thymeleaf template |
+| webjars-locator | module:spring-boot-thymeleaf | Add webjars locator to the project |
+| htmx-webjars | module:webjars-locator | Add HTMX webjar to the project |
+| alpinejs-webjars | module:webjars-locator | Add alpine.js webjar to the project |
+| github-actions-maven | module:maven-java | Add GitHub Actions for Maven Build |
+| github-actions-gradle | module:gradle-wrapper | Add GitHub Actions for Gradle Build |
+| gitlab-ci-maven | module:maven-java | Add GitLab CI for Maven Build |
+| gitlab-ci-gradle | module:gradle-java | Add GitLab CI for Gradle Build |
+| renovate | - | Add Renovate for automatic dependency updates |
+| sonarqube-java-backend | feature:java-build-tool, feature:code-coverage-java | Add Sonar configuration for Java Backend to inspect code quality |
+| sonarqube-java-backend-and-frontend | feature:java-build-tool, feature:code-coverage-java | Add Sonar configuration for Java Backend and Frontend to inspect code quality |
+| sonarqube-typescript | module:typescript | Add Sonar to project |
+| github-codespaces | - | Init GitHub Codespaces configuration files |
+| gitpod | - | Init Gitpod configuration files |
+| dockerfile-maven | module:maven-wrapper | Add Dockerfile with maven commands |
+| dockerfile-gradle | module:gradle-wrapper | Add Dockerfile with gradle commands |
+| application-service-hexagonal-architecture-documentation | - | Add documentation for hexagonal architecture |
+| front-hexagonal-architecture | - | Add front hexagonal architecture documentation |
+| sample-feature | feature:cucumber-authentication, feature:springdoc, module:java-base, module:kipe-expression, module:kipe-authorization | Add sample context with some APIs |
+| sample-jpa-persistence | feature:sample-schema, module:spring-boot-cucumber-jpa-reset | Add JPA persistence for sample feature |
+| sample-cassandra-persistence | module:sample-feature, module:cassandra-migration | Add Cassandra persistence for sample feature |
+| sample-mongodb-persistence | module:sample-feature, module:mongock | Add MongoDB persistence for sample feature |
+| sample-postgresql-flyway-changelog | module:flyway-postgresql, module:sample-feature, module:jpa-postgresql | Add PostgreSQL flyway changelog for sample feature |
+| sample-not-postgresql-flyway-changelog | module:flyway, module:sample-feature | Add not PostgreSQL flyway changelog for sample feature |
+| sample-liquibase-changelog | module:liquibase, module:sample-feature | Add liquibase changelog for sample feature |
+| seed4j-extension | module:spring-boot | Create a Seed4J extension to build custom modules |
 
 ---
 
