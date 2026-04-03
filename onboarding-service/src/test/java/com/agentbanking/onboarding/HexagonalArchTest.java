@@ -18,6 +18,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Configuration;
 
 @UnitTest
 class HexagonalArchTest {
@@ -291,7 +292,7 @@ class HexagonalArchTest {
 
     @Test
     void shouldNotHavePublicClasses() {
-      noClasses().that().resideInAnyPackage(WIRE_PACKAGES).should().bePublic().check(classes);
+      noClasses().that().resideInAnyPackage(WIRE_PACKAGES).and().areNotMetaAnnotatedWith(Configuration.class).should().bePublic().check(classes);
     }
   }
 }

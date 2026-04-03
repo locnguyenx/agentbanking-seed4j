@@ -2,7 +2,7 @@
   "name": "agent-banking-rules",
   "version": "0.0.0",
   "private": true,
-  "description": "Agent Banking Rules",
+  "description": "Rules Service",
   "license": "UNLICENSED",
   "packageManager": "npm@11.7.0",
   "engines": {

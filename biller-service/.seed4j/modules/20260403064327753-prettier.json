@@ -1,0 +1,14 @@
+{
+  "module" : "prettier",
+  "date" : "2026-04-03T06:43:27.753816200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./biller-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.biller",
+    "projectName" : "Biller Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingBiller"
+  }
+}

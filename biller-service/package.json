@@ -2,7 +2,7 @@
   "name": "agent-banking-biller",
   "version": "0.0.0",
   "private": true,
-  "description": "Agent Banking Biller",
+  "description": "Biller Service",
   "license": "UNLICENSED",
   "packageManager": "npm@11.7.0",
   "engines": {

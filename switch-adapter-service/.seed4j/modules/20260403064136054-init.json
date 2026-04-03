@@ -1,0 +1,13 @@
+{
+  "module" : "init",
+  "date" : "2026-04-03T06:41:36.054768200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./switch-adapter-service",
+    "commit" : false,
+    "projectName" : "Switch Adapter Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingSwitchAdapter"
+  }
+}

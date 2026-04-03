@@ -37,12 +37,12 @@ This is where the outside world connects.
 
 In this tier, we use **Domain-Driven Design (DDD)** to ensure each microservice is decoupled and independently scalable.
 
-1. **Transaction Orchestrator (Spring Boot):** Acts as the coordinator for complex financial flows. It uses **Spring Cloud OpenFeign** to communicate with the Ledger and Switch services.
+1. **Transaction Orchestrator (Spring Boot):** Acts as the coordinator for complex financial flows. It uses **Spring Cloud OpenFeign** to communicate with the Ledger and Switch services. Using Saga Pattern
 2. **e-KYC & Onboarding (Spring State Machine):** Manages the "Open Account" lifecycle. The State Machine ensures an application cannot skip steps (e.g., it can't move to `APPROVED` unless the `AML_CHECK` and `BIOMETRIC_MATCH` states are `SUCCESS`).
 3. **Ledger & Float Service (Spring Data JPA):** This is the most critical service. It manages the agent "wallets." We use **Hibernate Envers** here to maintain an immutable audit log of every balance change (required for BNM audits).
 4.  **Biller Service:** Manages utility payments and aggregator (Fiuu/JomPAY) webhooks.
 5. **Rules & Parameter Service (Spring Cache + Redis):** Instead of Moqui's internal logic, we use a dedicated Spring service that loads business rules (fees, limits) into **Redis**. This allows Tier 2 to make decisions in under 5ms.
-6. **Saga Pattern (Spring Cloud Sleuth/Zipkin):** Since we are in a microservices environment, we use Saga patterns to manage distributed transactions. If a "Fund Transfer" fails at the National Switch, the **Saga Coordinator** ensures the Ledger Service automatically rolls back the agent's float.
+6. **Switch Adapter Service:** talk to downstream/external legacy systems
 
 Refer to `./ARCH-supplementary/Microservices Domain Map.md` for service dependencies
 

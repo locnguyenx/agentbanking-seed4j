@@ -1,4 +1,4 @@
-# Agent Banking Switch Adapter
+# Switch Adapter Service
 
 ## Prerequisites
 

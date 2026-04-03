@@ -8,7 +8,7 @@ Internal & External Interface dependencies for all Business Core Tier - services
 3.  **Switch Adapter Service:** Translates internal JSON to ISO 8583 (Card) and ISO 20022 (DuitNow).
 4.  **Biller Service:** Manages utility payments and aggregator (Fiuu/JomPAY) webhooks.
 5.  **Rules & Parameter Service:** Centralized engine for fees, limits, and anti-smurfing (Velocity) checks.
-6. **Transaction Orchestrator (Spring Boot):** Acts as the coordinator for complex financial flows. It uses **Spring Cloud OpenFeign** to communicate with the Ledger and Switch services.
+6. **Transaction Orchestrator (Spring Boot):** Acts as the coordinator for complex financial flows. It uses **Spring Cloud OpenFeign** to communicate with the Ledger and Switch services. Using Saga Pattern.
 
 ---
 
@@ -62,7 +62,7 @@ Manages the virtual books. It only talks to the "Real" bank books at the end of 
 ### 3. Switch Adapter Service
 *The protocol translator for cards and interbank rails.*
 
-This service decides **which** message to send and handles the Saga state, but it doesn't know "how" to format a binary ISO message.
+This service decides **which** message to send and handle the response, but it doesn't know "how" to format a binary ISO message.
 
 | Interface Type | Connected System | Protocol | Data Exchanged |
 | :--- | :--- | :--- | :--- |

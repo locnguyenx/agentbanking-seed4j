@@ -2,7 +2,7 @@
   "name": "agent-banking-switch-adapter",
   "version": "0.0.0",
   "private": true,
-  "description": "Agent Banking Switch Adapter",
+  "description": "Switch Adapter Service",
   "license": "UNLICENSED",
   "packageManager": "npm@11.7.0",
   "engines": {

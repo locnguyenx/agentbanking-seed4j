@@ -1,4 +1,4 @@
-# Agent Banking Onboarding
+# Onboarding Service
 
 ## Prerequisites
 
@@ -44,5 +44,6 @@ docker compose -f src/main/docker/kafka.yml up -d
 - [Hexagonal architecture](documentation/hexagonal-architecture.md)
 - [PostgreSQL](documentation/postgresql.md)
 - [Apache Kafka](documentation/apache-kafka.md)
+- [Logs Spy](documentation/logs-spy.md)
 
 <!-- seed4j-needle-documentation -->

@@ -157,3 +157,11 @@ bundles = {}
 	[libraries.spring-cloud-starter-gateway-server-webflux]
 		name = "spring-cloud-starter-gateway-server-webflux"
 		group = "org.springframework.cloud"
+
+	[libraries.spring-cloud-starter-loadbalancer]
+		name = "spring-cloud-starter-loadbalancer"
+		group = "org.springframework.cloud"
+
+	[libraries.spring-boot-starter-webflux]
+		name = "spring-boot-starter-webflux"
+		group = "org.springframework.boot"

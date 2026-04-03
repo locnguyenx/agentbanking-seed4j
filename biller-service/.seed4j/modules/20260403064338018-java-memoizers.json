@@ -1,0 +1,14 @@
+{
+  "module" : "java-memoizers",
+  "date" : "2026-04-03T06:43:38.018381200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./biller-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.biller",
+    "projectName" : "Biller Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingBiller"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "module" : "spring-boot",
+  "date" : "2026-04-03T06:28:41.152403600Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./api-gateway-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.gateway",
+    "projectName" : "API Gateway",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "ApiGateway"
+  }
+}

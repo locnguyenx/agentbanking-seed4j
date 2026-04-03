@@ -1,0 +1,15 @@
+{
+  "module" : "flyway",
+  "date" : "2026-04-03T06:48:05.261571300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./ledger-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.ledger",
+    "projectName" : "Ledger Service",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8082,
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}

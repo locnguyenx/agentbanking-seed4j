@@ -1,0 +1,15 @@
+{
+  "module" : "spring-boot-kafka",
+  "date" : "2026-04-03T06:52:09.562050400Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./biller-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.biller",
+    "projectName" : "Biller Service",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8085,
+    "version" : false,
+    "baseName" : "AgentBankingBiller"
+  }
+}

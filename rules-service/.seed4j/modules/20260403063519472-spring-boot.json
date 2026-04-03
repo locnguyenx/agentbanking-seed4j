@@ -1,0 +1,14 @@
+{
+  "module" : "spring-boot",
+  "date" : "2026-04-03T06:35:19.472658900Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./rules-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.rules",
+    "projectName" : "Rules Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingRules"
+  }
+}

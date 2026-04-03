@@ -1,0 +1,14 @@
+{
+  "module" : "java-memoizers",
+  "date" : "2026-04-03T06:41:15.875879300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./onboarding-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.onboarding",
+    "projectName" : "Onboarding Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingOnboarding"
+  }
+}

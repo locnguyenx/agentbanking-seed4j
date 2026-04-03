@@ -1,0 +1,13 @@
+{
+  "module" : "init",
+  "date" : "2026-04-03T06:40:23.295366100Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./onboarding-service",
+    "commit" : false,
+    "projectName" : "Onboarding Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingOnboarding"
+  }
+}

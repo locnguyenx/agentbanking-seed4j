@@ -1,0 +1,15 @@
+{
+  "module" : "jpa-postgresql",
+  "date" : "2026-04-03T06:48:47.206159900Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./onboarding-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.onboarding",
+    "projectName" : "Onboarding Service",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8083,
+    "version" : false,
+    "baseName" : "AgentBankingOnboarding"
+  }
+}

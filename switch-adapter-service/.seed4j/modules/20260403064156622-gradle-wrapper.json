@@ -1,0 +1,14 @@
+{
+  "module" : "gradle-wrapper",
+  "date" : "2026-04-03T06:41:56.622456500Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./switch-adapter-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.switchadapter",
+    "projectName" : "Switch Adapter Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingSwitchAdapter"
+  }
+}

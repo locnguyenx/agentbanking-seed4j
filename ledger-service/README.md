@@ -1,4 +1,4 @@
-# Agent Banking Ledger
+# Ledger Service
 
 ## Prerequisites
 

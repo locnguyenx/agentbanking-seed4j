@@ -1,0 +1,15 @@
+{
+  "module" : "spring-boot-kafka",
+  "date" : "2026-04-03T06:37:44.252908300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./rules-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.rules",
+    "projectName" : "Rules Service",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8081,
+    "version" : false,
+    "baseName" : "AgentBankingRules"
+  }
+}

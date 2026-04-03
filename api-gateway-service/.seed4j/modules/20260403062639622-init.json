@@ -1,0 +1,13 @@
+{
+  "module" : "init",
+  "date" : "2026-04-03T06:26:39.622107200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./api-gateway-service",
+    "commit" : false,
+    "projectName" : "API Gateway",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "ApiGateway"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "module" : "java-base",
+  "date" : "2026-04-03T06:39:39.309635900Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./ledger-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.ledger",
+    "projectName" : "Ledger Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}

@@ -1,4 +1,4 @@
-# Agent Banking Rules
+# Rules Service
 
 ## Prerequisites
 

@@ -1,0 +1,14 @@
+{
+  "module" : "spring-boot",
+  "date" : "2026-04-03T06:45:09.930254200Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./onboarding-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.onboarding",
+    "projectName" : "Onboarding Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingOnboarding"
+  }
+}

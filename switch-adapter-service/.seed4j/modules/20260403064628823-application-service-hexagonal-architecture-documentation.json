@@ -1,0 +1,15 @@
+{
+  "module" : "application-service-hexagonal-architecture-documentation",
+  "date" : "2026-04-03T06:46:28.823678800Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./switch-adapter-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.switchadapter",
+    "projectName" : "Switch Adapter Service",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8084,
+    "version" : false,
+    "baseName" : "AgentBankingSwitchAdapter"
+  }
+}

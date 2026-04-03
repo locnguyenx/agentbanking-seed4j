@@ -1,0 +1,14 @@
+{
+  "module" : "prettier",
+  "date" : "2026-04-03T06:39:48.724062500Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./ledger-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.ledger",
+    "projectName" : "Ledger Service",
+    "nodePackageManager" : "npm",
+    "version" : false,
+    "baseName" : "AgentBankingLedger"
+  }
+}

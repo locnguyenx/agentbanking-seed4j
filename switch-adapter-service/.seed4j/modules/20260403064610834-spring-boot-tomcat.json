@@ -1,0 +1,15 @@
+{
+  "module" : "spring-boot-tomcat",
+  "date" : "2026-04-03T06:46:10.834920300Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "./switch-adapter-service",
+    "commit" : false,
+    "packageName" : "com.agentbanking.switchadapter",
+    "projectName" : "Switch Adapter Service",
+    "nodePackageManager" : "npm",
+    "serverPort" : 8084,
+    "version" : false,
+    "baseName" : "AgentBankingSwitchAdapter"
+  }
+}
