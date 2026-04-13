@@ -3,9 +3,9 @@ import java.util.Properties
 
 plugins {
   java
-  alias(libs.plugins.spring.boot.get())
+  alias(libs.plugins.spring.boot)
   jacoco
-  alias(libs.plugins.sonarqube.get())
+  alias(libs.plugins.sonarqube)
   // seed4j-needle-gradle-plugins
 }
 
@@ -72,37 +72,37 @@ if (profiles.isEmpty() || profiles.contains("local")) {
 // seed4j-needle-profile-activation
 
 dependencies {
-  implementation(platform(libs.spring.boot.dependencies.get()))
-  implementation(libs.spring.boot.starter.get())
-  implementation(libs.spring.boot.configuration.processor.get())
-  implementation(libs.commons.lang3.get())
-  implementation(libs.spring.boot.starter.actuator.get())
-  implementation(libs.spring.boot.starter.validation.get())
-  implementation(libs.spring.boot.starter.webmvc.get())
-  implementation(libs.hikariCP.get())
-  implementation(libs.spring.boot.starter.data.jpa.get())
+  implementation(platform(libs.spring.boot.dependencies))
+  implementation(libs.spring.boot.starter)
+  implementation(libs.spring.boot.configuration.processor)
+  implementation(libs.commons.lang3)
+  implementation(libs.spring.boot.starter.actuator)
+  implementation(libs.spring.boot.starter.validation)
+  implementation(libs.spring.boot.starter.webmvc)
+  implementation(libs.hikariCP)
+  implementation(libs.spring.boot.starter.data.jpa)
   implementation("org.springframework.boot:spring-boot-autoconfigure")
-  implementation(libs.spring.boot.starter.flyway.get())
-  implementation(libs.flyway.database.postgresql.get())
-  implementation(libs.kafka.clients.get())
-  implementation(libs.testcontainers.kafka.get())
-  implementation(libs.springdoc.openapi.starter.webmvc.ui.get())
-  implementation(libs.springdoc.openapi.starter.webmvc.api.get())
-  implementation(libs.spring.boot.starter.security.get())
-  implementation(libs.jjwt.api.get())
+  implementation(libs.spring.boot.starter.flyway)
+  implementation(libs.flyway.database.postgresql)
+  implementation(libs.kafka.clients)
+  implementation(libs.testcontainers.kafka)
+  implementation(libs.springdoc.openapi.starter.webmvc.ui)
+  implementation(libs.springdoc.openapi.starter.webmvc.api)
+  implementation(libs.spring.boot.starter.security)
+  implementation(libs.jjwt.api)
   // seed4j-needle-gradle-implementation-dependencies
   // seed4j-needle-gradle-compile-dependencies
-  runtimeOnly(libs.postgresql.get())
-  runtimeOnly(libs.jjwt.impl.get())
-  runtimeOnly(libs.jjwt.jackson.get())
+  runtimeOnly(libs.postgresql)
+  runtimeOnly(libs.jjwt.impl)
+  runtimeOnly(libs.jjwt.jackson)
   // seed4j-needle-gradle-runtime-dependencies
 
-  testImplementation(libs.archunit.junit5.api.get())
-  testImplementation(libs.spring.boot.starter.test.get())
-  testImplementation(libs.reflections.get())
-  testImplementation(libs.spring.boot.starter.webmvc.test.get())
-  testImplementation(libs.testcontainers.testcontainers.postgresql.get())
-  testImplementation(libs.spring.boot.starter.security.test.get())
+  testImplementation(libs.archunit.junit5.api)
+  testImplementation(libs.spring.boot.starter.test)
+  testImplementation(libs.reflections)
+  testImplementation(libs.spring.boot.starter.webmvc.test)
+  testImplementation(libs.testcontainers.testcontainers.postgresql)
+  testImplementation(libs.spring.boot.starter.security.test)
   // seed4j-needle-gradle-test-dependencies
 }
 
