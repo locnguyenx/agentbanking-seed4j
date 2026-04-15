@@ -1,0 +1,18 @@
+{
+  "module" : "init",
+  "date" : "2026-04-09T08:38:51.711441500Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "springConfigurationFormat" : "yaml",
+    "packageName" : "com.agentbanking",
+    "projectName" : "NotificationService",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "serverPort" : 8080,
+    "version" : false,
+    "baseName" : "NotificationService"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "module" : "redis",
+  "date" : "2026-04-07T06:37:09.990612800Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : "D:\\Working\\myprojects\\agentbanking-seed4j",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "springConfigurationFormat" : "yaml",
+    "packageName" : "com.agentbanking",
+    "projectName" : "Agent Banking Platform",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "serverPort" : 8080,
+    "version" : false,
+    "baseName" : "agentBanking"
+  }
+}

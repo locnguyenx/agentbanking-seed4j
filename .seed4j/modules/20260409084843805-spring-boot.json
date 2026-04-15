@@ -1,0 +1,18 @@
+{
+  "module" : "spring-boot",
+  "date" : "2026-04-09T08:48:43.805285900Z",
+  "properties" : {
+    "help" : false,
+    "projectPath" : ".",
+    "endOfLine" : "lf",
+    "commit" : false,
+    "springConfigurationFormat" : "yaml",
+    "packageName" : "com.agentbanking",
+    "projectName" : "TestMicroservice",
+    "nodePackageManager" : "npm",
+    "indentSize" : 2,
+    "serverPort" : 8080,
+    "version" : false,
+    "baseName" : "TestMicroservice"
+  }
+}

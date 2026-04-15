@@ -10,53 +10,62 @@ bundles = {}
 	jacoco = "0.8.14"
 	spring-boot = "4.0.1"
 	springdoc-openapi = "3.0.0"
+	spring-cloud = "2024.0.0"
+	temporal = "1.30.1"
 
 	[plugins.sonarqube]
 		id = "org.sonarqube"
 
 		[plugins.sonarqube.version]
-			ref = "sonarqube"
+		ref = "sonarqube"
 
 	[plugins.spring-boot]
 		id = "org.springframework.boot"
 
 		[plugins.spring-boot.version]
-			ref = "spring-boot"
+		ref = "spring-boot"
 
 	[libraries.testcontainers-testcontainers-postgresql]
 		name = "testcontainers-postgresql"
 		group = "org.testcontainers"
 
 		[libraries.testcontainers-testcontainers-postgresql.version]
-			ref = "testcontainers"
+		ref = "testcontainers"
 
 	[libraries.testcontainers-kafka]
 		name = "testcontainers-kafka"
 		group = "org.testcontainers"
 
 		[libraries.testcontainers-kafka.version]
-			ref = "testcontainers"
+		ref = "testcontainers"
 
 	[libraries.reflections]
 		name = "reflections"
 		group = "org.reflections"
 
 		[libraries.reflections.version]
-			ref = "reflections"
+		ref = "reflections"
 
-	[libraries.spring-boot-dependencies]
-		name = "spring-boot-dependencies"
-		group = "org.springframework.boot"
+[libraries.spring-boot-dependencies]
+	name = "spring-boot-dependencies"
+	group = "org.springframework.boot"
 
-		[libraries.spring-boot-dependencies.version]
-			ref = "spring-boot"
+	[libraries.spring-boot-dependencies.version]
+	ref = "spring-boot"
+
+	[libraries.spring-cloud-dependencies]
+	name = "spring-cloud-dependencies"
+	group = "org.springframework.cloud"
+
+	[libraries.spring-cloud-dependencies.version]
+	ref = "spring-cloud"
 
 	[libraries.springdoc-openapi-starter-webmvc-ui]
 		name = "springdoc-openapi-starter-webmvc-ui"
 		group = "org.springdoc"
 
 		[libraries.springdoc-openapi-starter-webmvc-ui.version]
-			ref = "springdoc-openapi"
+		ref = "springdoc-openapi"
 
 	[libraries.spring-boot-starter]
 		name = "spring-boot-starter"
@@ -67,7 +76,7 @@ bundles = {}
 		group = "org.apache.kafka"
 
 		[libraries.kafka-clients.version]
-			ref = "kafka-clients"
+		ref = "kafka-clients"
 
 	[libraries.postgresql]
 		name = "postgresql"
@@ -86,7 +95,7 @@ bundles = {}
 		group = "io.jsonwebtoken"
 
 		[libraries.jjwt-jackson.version]
-			ref = "json-web-token"
+		ref = "json-web-token"
 
 	[libraries.spring-boot-starter-test]
 		name = "spring-boot-starter-test"
@@ -101,14 +110,14 @@ bundles = {}
 		group = "io.jsonwebtoken"
 
 		[libraries.jjwt-impl.version]
-			ref = "json-web-token"
+		ref = "json-web-token"
 
 	[libraries.archunit-junit5-api]
 		name = "archunit-junit5-api"
 		group = "com.tngtech.archunit"
 
 		[libraries.archunit-junit5-api.version]
-			ref = "archunit-junit5"
+		ref = "archunit-junit5"
 
 	[libraries.spring-boot-starter-security-test]
 		name = "spring-boot-starter-security-test"
@@ -123,7 +132,7 @@ bundles = {}
 		group = "org.springdoc"
 
 		[libraries.springdoc-openapi-starter-webmvc-api.version]
-			ref = "springdoc-openapi"
+		ref = "springdoc-openapi"
 
 	[libraries.hikariCP]
 		name = "HikariCP"
@@ -134,7 +143,7 @@ bundles = {}
 		group = "io.jsonwebtoken"
 
 		[libraries.jjwt-api.version]
-			ref = "json-web-token"
+		ref = "json-web-token"
 
 	[libraries.spring-boot-starter-data-jpa]
 		name = "spring-boot-starter-data-jpa"
@@ -159,3 +168,33 @@ bundles = {}
 	[libraries.commons-lang3]
 		name = "commons-lang3"
 		group = "org.apache.commons"
+
+	[libraries.spring-cloud-openfeign]
+		name = "spring-cloud-starter-openfeign"
+		group = "org.springframework.cloud"
+
+	[libraries.spring-cloud-starter-loadbalancer]
+		name = "spring-cloud-starter-loadbalancer"
+		group = "org.springframework.cloud"
+
+	[libraries.spring-cloud-circuitbreaker]
+		name = "spring-cloud-starter-circuitbreaker-resilience4j"
+		group = "org.springframework.cloud"
+
+	[libraries.temporal-spring-boot-starter]
+		name = "temporal-spring-boot-starter"
+		group = "io.temporal"
+
+		[libraries.temporal-spring-boot-starter.version]
+		ref = "temporal"
+
+	[libraries.spring-data-redis]
+		name = "spring-boot-starter-data-redis"
+		group = "org.springframework.boot"
+
+	[libraries.spring-cloud-stream]
+		name = "spring-cloud-stream-binder-kafka"
+		group = "org.springframework.cloud"
+
+		[libraries.spring-cloud-stream.version]
+		ref = "spring-cloud"
