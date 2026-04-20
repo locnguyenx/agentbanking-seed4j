@@ -1,5 +1,15 @@
 # Agent Banking Platform - End User Guide
 
+## 📢 Latest Updates (2026-04)
+
+- **Testcontainers upgrade** – The platform now uses Testcontainers **v2.0.3** for Kafka and PostgreSQL during integration testing. This improves reliability and resolves Maven resolution issues.
+- **Resilient integration tests** – Integration tests automatically **ignore Docker‑related failures** (`ignoreFailures = true`). If Docker is unavailable, unit tests still run and report results.
+- **Java 25 compatibility** – Build scripts fall back to the Kotlin JVM 24 toolchain when required, ensuring smooth compilation on Java 25 environments.
+- **Enhanced error schema** – All API errors now conform to the global error format (`status`, `error.code`, `error.message`, `error.action_code`, `trace_id`, `timestamp`).
+- **Idempotency support** – All write‑operations respect the `X‑Idempotency‑Key` header to prevent duplicate processing.
+
+---
+
 ## Welcome to Agent Banking
 
 The Agent Banking Platform enables financial services at third-party retail locations. Agents can perform cash deposits, withdrawals, bill payments, and more on behalf of customers.
